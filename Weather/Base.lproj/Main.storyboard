@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1h-PR-uDK">
+                                <rect key="frame" x="460" y="40" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgM-PB-xgO">
+                                <rect key="frame" x="214" y="101" width="173" height="96"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bB-gz-9vX">
+                                <rect key="frame" x="20" y="40" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search. e.g: Kuala Lumpur" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHP-bE-CSx">
+                                <rect key="frame" x="20" y="275" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yT6-qZ-t4L">
+                                <rect key="frame" x="389" y="139" width="46" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKY-qB-rnS">
+                                <rect key="frame" x="246" y="355" width="109" height="30"/>
+                                <state key="normal" title="Weather in here"/>
+                                <connections>
+                                    <action selector="stanbbut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wim-5A-kmM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8bB-gz-9vX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="2ex-ex-KmB"/>
+                            <constraint firstItem="kgM-PB-xgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Jj-te-QDM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kgM-PB-xgO" secondAttribute="trailing" constant="189" id="9dp-qE-i1S"/>
+                            <constraint firstItem="QKY-qB-rnS" firstAttribute="top" secondItem="DHP-bE-CSx" secondAttribute="bottom" constant="50" id="Bhh-KU-5bO"/>
+                            <constraint firstItem="kgM-PB-xgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="Bn9-d9-Zjy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QKY-qB-rnS" secondAttribute="bottom" constant="215" id="HbZ-3L-x9N"/>
+                            <constraint firstItem="QKY-qB-rnS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="226" id="IIw-0R-bGl"/>
+                            <constraint firstItem="yT6-qZ-t4L" firstAttribute="baseline" secondItem="kgM-PB-xgO" secondAttribute="baseline" id="Js2-gx-gFS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="DHP-bE-CSx" secondAttribute="leading" id="S74-EM-lDP"/>
+                            <constraint firstItem="yT6-qZ-t4L" firstAttribute="leading" secondItem="kgM-PB-xgO" secondAttribute="trailing" constant="2" id="VUi-fa-F7h"/>
+                            <constraint firstItem="c1h-PR-uDK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="XVT-ku-i1Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DHP-bE-CSx" secondAttribute="trailing" id="a6T-S7-GCV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QKY-qB-rnS" secondAttribute="trailing" constant="225" id="e8z-Eb-hA4"/>
+                            <constraint firstItem="kgM-PB-xgO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="190" id="hB5-0H-mdj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8bB-gz-9vX" secondAttribute="leading" id="hiv-HA-9n5"/>
+                            <constraint firstItem="QKY-qB-rnS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="llM-gh-Vlk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c1h-PR-uDK" secondAttribute="trailing" id="slH-hv-yZR"/>
+                            <constraint firstItem="DHP-bE-CSx" firstAttribute="top" secondItem="kgM-PB-xgO" secondAttribute="bottom" constant="78" id="tWV-5D-dXH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9dp-qE-i1S"/>
+                                <exclude reference="hB5-0H-mdj"/>
+                                <exclude reference="IIw-0R-bGl"/>
+                                <exclude reference="e8z-Eb-hA4"/>
+                                <exclude reference="HbZ-3L-x9N"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="8bB-gz-9vX" id="Zxz-L0-fq9"/>
+                        <outlet property="conditionLabel" destination="c1h-PR-uDK" id="jZ0-0j-L9b"/>
+                        <outlet property="locationField" destination="DHP-bE-CSx" id="qjn-96-uUr"/>
+                        <outlet property="temperatureLabel" destination="kgM-PB-xgO" id="OeL-Bi-xC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="321" y="308"/>
         </scene>
     </scenes>
 </document>
